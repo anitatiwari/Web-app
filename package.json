@@ -1,0 +1,22 @@
+{
+  "name": "anusha-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:up": "drizzle-kit up:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:drop": "drizzle-kit drop"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "drizzle-orm": "^0.30.9",
+    "express": "^4.19.2",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.17"
+  }
+}

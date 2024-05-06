@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: Web Application
+  version: 1.0.0
+  description: API documentation for a web application that manages posts
+servers:
+  - url: http://localhost:8000
+paths:
+  /posts:
+    get:
+      summary: Retrieve all posts
+      description: Returns a list of all posts available in the system.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+    post:
+      summary: Add a new post
+      description: Adds a new post to the system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '200':
+          description: Data saved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Post created successfully"
+                  data:
+                    $ref: '#/components/schemas/Post'
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the post.
+        description:
+          type: string
+          description: A brief description of the post.
+        category:
+          type: string
+          description: The category of the post.

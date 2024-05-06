@@ -1,0 +1,9 @@
+{
+    "out": "drizzle/migrations",
+    "schema": "./lib/schema.js",
+    "driver":"better-sqlite",
+    "dbCredentials": {
+        "url": "sqlite.db"
+    }
+  }
+  
